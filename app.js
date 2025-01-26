@@ -74,6 +74,32 @@ document.addEventListener('DOMContentLoaded', function() {
         assessmentContainer.appendChild(criteriaList);
     }
 
+    // Function to navigate between pages
+    function navigateToPage(page) {
+        window.location.href = page;
+    }
+
+    // Add event listeners to navigation links
+    document.querySelector('nav ul li a[href="student-profiles.html"]').addEventListener('click', function(event) {
+        event.preventDefault();
+        navigateToPage('student-profiles.html');
+    });
+
+    document.querySelector('nav ul li a[href="investor-opportunities.html"]').addEventListener('click', function(event) {
+        event.preventDefault();
+        navigateToPage('investor-opportunities.html');
+    });
+
+    document.querySelector('nav ul li a[href="assessment.html"]').addEventListener('click', function(event) {
+        event.preventDefault();
+        navigateToPage('assessment.html');
+    });
+
+    document.querySelector('nav ul li a[href="why-it-matters.html"]').addEventListener('click', function(event) {
+        event.preventDefault();
+        navigateToPage('why-it-matters.html');
+    });
+
     // Initialize the platform
     showcaseStudentProfiles();
     showcaseInvestorOpportunities();

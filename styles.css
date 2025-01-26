@@ -12,6 +12,21 @@ header {
     text-align: center;
 }
 
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
 section {
     margin: 2em;
     padding: 1em;
