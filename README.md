@@ -1,2 +1,1 @@
-# keystone-platform
-A platform to connect talented international students with financial resources for higher education
+This repository is empty. Any task executed on it should be considered a new capability and needs to be created.
