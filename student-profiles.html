@@ -22,18 +22,65 @@
 
     <section id="student-profiles">
         <h2>Showcase of Student Profiles</h2>
-        <div class="profile">
+        <div class="profile-card">
+            <img src="profile-picture.jpg" alt="Profile Picture">
             <h3>John Doe</h3>
-            <p><strong>Achievements:</strong> Graduated with honors in Computer Science</p>
-            <p><strong>Aspirations:</strong> To become a software engineer at a top tech company</p>
-            <p><strong>Funding Needs:</strong> £20,000 for tuition and living expenses</p>
+            <p><strong>About Me:</strong> Graduated with honors in Computer Science. Aspiring software engineer at a top tech company.</p>
+            <button class="expand-button" onclick="expandProfile('john-doe')">View More</button>
         </div>
-        <div class="profile">
+        <div class="profile-card">
+            <img src="profile-picture.jpg" alt="Profile Picture">
             <h3>Jane Smith</h3>
-            <p><strong>Achievements:</strong> Published research in international journals</p>
-            <p><strong>Aspirations:</strong> To pursue a PhD in Biomedical Engineering</p>
-            <p><strong>Funding Needs:</strong> £25,000 for research and living expenses</p>
+            <p><strong>About Me:</strong> Published research in international journals. Aspiring to pursue a PhD in Biomedical Engineering.</p>
+            <button class="expand-button" onclick="expandProfile('jane-smith')">View More</button>
         </div>
     </section>
+
+    <div id="profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <div id="modal-profile-content"></div>
+        </div>
+    </div>
+
+    <script>
+        function expandProfile(profileId) {
+            const profiles = {
+                'john-doe': {
+                    name: 'John Doe',
+                    picture: 'profile-picture.jpg',
+                    story: 'Graduated with honors in Computer Science. Aspiring software engineer at a top tech company.',
+                    goals: 'To become a software engineer at a top tech company.',
+                    achievements: 'Graduated with honors in Computer Science.',
+                    fundingNeeds: '£20,000 for tuition and living expenses'
+                },
+                'jane-smith': {
+                    name: 'Jane Smith',
+                    picture: 'profile-picture.jpg',
+                    story: 'Published research in international journals. Aspiring to pursue a PhD in Biomedical Engineering.',
+                    goals: 'To pursue a PhD in Biomedical Engineering.',
+                    achievements: 'Published research in international journals.',
+                    fundingNeeds: '£25,000 for research and living expenses'
+                }
+            };
+
+            const profile = profiles[profileId];
+            const modalContent = document.getElementById('modal-profile-content');
+            modalContent.innerHTML = `
+                <img src="${profile.picture}" alt="Profile Picture">
+                <h3>${profile.name}</h3>
+                <p><strong>Story:</strong> ${profile.story}</p>
+                <p><strong>Goals:</strong> ${profile.goals}</p>
+                <p><strong>Achievements:</strong> ${profile.achievements}</p>
+                <p><strong>Funding Needs:</strong> ${profile.fundingNeeds}</p>
+            `;
+
+            document.getElementById('profile-modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('profile-modal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
