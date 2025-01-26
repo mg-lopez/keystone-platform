@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+section {
+    margin: 2em;
+    padding: 1em;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #333;
+}
+
+p {
+    color: #666;
+    line-height: 1.6;
+}
+
+#student-profiles {
+    background-color: #e3f2fd;
+}
+
+#investor-opportunities {
+    background-color: #fff3e0;
+}
+
+#assessment-process {
+    background-color: #e8f5e9;
+}
+
+#win-win-model {
+    background-color: #fce4ec;
+}
+
+#why-it-matters {
+    background-color: #f3e5f5;
+}
