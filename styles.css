@@ -27,6 +27,10 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
 section {
     margin: 2em;
     padding: 1em;
@@ -62,4 +66,77 @@ p {
 
 #why-it-matters {
     background-color: #f3e5f5;
+}
+
+#hero {
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 4em 2em;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 1em 2em;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.cta-button:hover {
+    background-color: #45a049;
+}
+
+.grid-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+}
+
+.testimonial {
+    background-color: #f9f9f9;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1em;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 2em;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.social-media-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-media-links li {
+    display: inline;
+    margin-right: 1em;
+}
+
+.social-media-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-media-links li a:hover {
+    text-decoration: underline;
 }

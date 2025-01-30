@@ -100,8 +100,39 @@ document.addEventListener('DOMContentLoaded', function() {
         navigateToPage('why-it-matters.html');
     });
 
+    // Function to handle the call-to-action button click event in the hero section
+    function handleCTAClick() {
+        window.location.href = 'student-profiles.html';
+    }
+
+    // Function to dynamically load testimonials from a predefined array
+    function loadTestimonials() {
+        const testimonials = [
+            {
+                quote: "Keystone helped me achieve my dream of studying abroad. I couldn't have done it without their support!",
+                author: "John Doe, Student"
+            },
+            {
+                quote: "Investing in students through Keystone has been a rewarding experience. I'm proud to support their education.",
+                author: "Jane Smith, Investor"
+            }
+        ];
+
+        const testimonialsContainer = document.getElementById('testimonials');
+        testimonials.forEach(testimonial => {
+            const testimonialElement = document.createElement('div');
+            testimonialElement.classList.add('testimonial');
+            testimonialElement.innerHTML = `
+                <p>"${testimonial.quote}"</p>
+                <p>- ${testimonial.author}</p>
+            `;
+            testimonialsContainer.appendChild(testimonialElement);
+        });
+    }
+
     // Initialize the platform
     showcaseStudentProfiles();
     showcaseInvestorOpportunities();
     assessStudentPotential();
+    loadTestimonials();
 });
