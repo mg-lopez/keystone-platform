@@ -129,7 +129,6 @@ document.addEventListener('DOMContentLoaded', function() {
             testimonialsContainer.appendChild(testimonialElement);
         });
     }
-
     // Function to dynamically load additional student profiles
     function loadMoreProfiles() {
         const additionalProfiles = [
@@ -204,6 +203,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const nav = document.querySelector('nav');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 0) {
+    // Function to implement a sticky navigation menu
+    function implementStickyNav() {
+        const nav = document.querySelector('nav');
+        const sticky = nav.offsetTop;
+
+        window.onscroll = function() {
+            if (window.pageYOffset >= sticky) {
                 nav.classList.add('sticky');
             } else {
                 nav.classList.remove('sticky');
@@ -222,6 +228,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
         });
+        };
+    // Function to toggle the collapsible or hamburger menu for mobile responsiveness
+    function toggleMenu() {
+        const nav = document.querySelector('nav ul');
+        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    // Add event listener to the hamburger menu
+    document.querySelector('.hamburger-menu').addEventListener('click', toggleMenu);
+
+    // Function to add animations or interactive elements
+    function addAnimations() {
+        const elements = document.querySelectorAll('.profile-card, .opportunity, .testimonial');
+        elements.forEach(element => {
+            element.style.animation = 'fadeIn 1s ease-in';
+        });
     }
 
     // Initialize the platform
@@ -233,4 +255,6 @@ document.addEventListener('DOMContentLoaded', function() {
     addProfileCardAnimations();
     enhanceProfilePopup();
     implementStickyNavigation();
+    implementStickyNav();
+    addAnimations();
 });
