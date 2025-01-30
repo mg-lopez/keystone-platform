@@ -130,6 +130,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+<<<<<<< redesign-homepage
+    // Function to implement a sticky navigation menu
+    function implementStickyNav() {
+        const nav = document.querySelector('nav');
+        const sticky = nav.offsetTop;
+
+        window.onscroll = function() {
+            if (window.pageYOffset >= sticky) {
+                nav.classList.add('sticky');
+            } else {
+                nav.classList.remove('sticky');
+            }
+        };
+=======
     // Function to toggle the collapsible or hamburger menu for mobile responsiveness
     function toggleMenu() {
         const nav = document.querySelector('nav ul');
@@ -145,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
         elements.forEach(element => {
             element.style.animation = 'fadeIn 1s ease-in';
         });
+>>>>>>> main
     }
 
     // Initialize the platform
@@ -152,5 +167,9 @@ document.addEventListener('DOMContentLoaded', function() {
     showcaseInvestorOpportunities();
     assessStudentPotential();
     loadTestimonials();
+<<<<<<< redesign-homepage
+    implementStickyNav();
+=======
     addAnimations();
+>>>>>>> main
 });
