@@ -130,9 +130,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Function to toggle the collapsible or hamburger menu for mobile responsiveness
+    function toggleMenu() {
+        const nav = document.querySelector('nav ul');
+        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    // Add event listener to the hamburger menu
+    document.querySelector('.hamburger-menu').addEventListener('click', toggleMenu);
+
+    // Function to add animations or interactive elements
+    function addAnimations() {
+        const elements = document.querySelectorAll('.profile-card, .opportunity, .testimonial');
+        elements.forEach(element => {
+            element.style.animation = 'fadeIn 1s ease-in';
+        });
+    }
+
     // Initialize the platform
     showcaseStudentProfiles();
     showcaseInvestorOpportunities();
     assessStudentPotential();
     loadTestimonials();
+    addAnimations();
 });
