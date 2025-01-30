@@ -129,8 +129,80 @@ document.addEventListener('DOMContentLoaded', function() {
             testimonialsContainer.appendChild(testimonialElement);
         });
     }
+    // Function to dynamically load additional student profiles
+    function loadMoreProfiles() {
+        const additionalProfiles = [
+            {
+                name: 'Alice Johnson',
+                achievements: 'Top scorer in Mathematics Olympiad',
+                aspirations: 'To pursue a degree in Data Science',
+                fundingNeeds: '£15,000 for tuition and living expenses'
+            },
+            {
+                name: 'Bob Brown',
+                achievements: 'Winner of National Science Fair',
+                aspirations: 'To become a research scientist in Physics',
+                fundingNeeds: '£18,000 for research and living expenses'
+            }
+        ];
 
-<<<<<<< redesign-homepage
+        const profilesContainer = document.getElementById('student-profiles');
+        additionalProfiles.forEach(profile => {
+            const profileElement = document.createElement('div');
+            profileElement.classList.add('profile');
+            profileElement.innerHTML = `
+                <h3>${profile.name}</h3>
+                <p><strong>Achievements:</strong> ${profile.achievements}</p>
+                <p><strong>Aspirations:</strong> ${profile.aspirations}</p>
+                <p><strong>Funding Needs:</strong> ${profile.fundingNeeds}</p>
+            `;
+            profilesContainer.appendChild(profileElement);
+        });
+    }
+
+    // Add event listener to "Load More" button
+    document.getElementById('load-more-button').addEventListener('click', loadMoreProfiles);
+
+    // Function to add hover effects to profile cards
+    function addHoverEffects() {
+        const profileCards = document.querySelectorAll('.profile');
+        profileCards.forEach(card => {
+            card.addEventListener('mouseover', () => {
+                card.style.transform = 'translateY(-5px)';
+            });
+            card.addEventListener('mouseout', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    }
+
+    // Function to add animations to profile cards
+    function addProfileCardAnimations() {
+        const profileCards = document.querySelectorAll('.profile');
+        profileCards.forEach(card => {
+            card.style.animation = 'slideIn 0.5s ease-in-out';
+        });
+    }
+
+    // Function to enhance the profile pop-up with a slide-in effect and smooth scroll back
+    function enhanceProfilePopup() {
+        const profileModal = document.getElementById('profile-modal');
+        const closeButton = document.querySelector('.close-button');
+
+        closeButton.addEventListener('click', () => {
+            profileModal.style.display = 'none';
+            window.scrollTo({
+                top: document.documentElement.scrollTop,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Function to implement a sticky navigation menu with smooth scrolling effects
+    function implementStickyNavigation() {
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
     // Function to implement a sticky navigation menu
     function implementStickyNav() {
         const nav = document.querySelector('nav');
@@ -142,8 +214,21 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 nav.classList.remove('sticky');
             }
+        });
+
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
         };
-=======
     // Function to toggle the collapsible or hamburger menu for mobile responsiveness
     function toggleMenu() {
         const nav = document.querySelector('nav ul');
@@ -159,7 +244,6 @@ document.addEventListener('DOMContentLoaded', function() {
         elements.forEach(element => {
             element.style.animation = 'fadeIn 1s ease-in';
         });
->>>>>>> main
     }
 
     // Initialize the platform
@@ -167,9 +251,10 @@ document.addEventListener('DOMContentLoaded', function() {
     showcaseInvestorOpportunities();
     assessStudentPotential();
     loadTestimonials();
-<<<<<<< redesign-homepage
+    addHoverEffects();
+    addProfileCardAnimations();
+    enhanceProfilePopup();
+    implementStickyNavigation();
     implementStickyNav();
-=======
     addAnimations();
->>>>>>> main
 });
