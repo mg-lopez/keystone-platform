@@ -132,8 +132,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to toggle the collapsible or hamburger menu for mobile responsiveness
     function toggleMenu() {
-        const nav = document.querySelector('nav ul');
-        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        const navMenu = document.querySelector('nav ul');
+        navMenu.classList.toggle('active');
     }
 
     // Add event listener to the hamburger menu
@@ -141,9 +141,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to add animations or interactive elements
     function addAnimations() {
-        const elements = document.querySelectorAll('.profile-card, .opportunity, .testimonial');
-        elements.forEach(element => {
-            element.style.animation = 'fadeIn 1s ease-in';
+        const profileCards = document.querySelectorAll('.profile-card');
+        profileCards.forEach(card => {
+            card.addEventListener('mouseover', () => {
+                card.classList.add('animated');
+            });
+            card.addEventListener('mouseout', () => {
+                card.classList.remove('animated');
+            });
         });
     }
 
