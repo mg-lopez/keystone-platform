@@ -1,0 +1,6 @@
+{
+  "firebase_hosting": {
+    "deploymentHostingUrl": "https://global-finance-fb634.web.app"
+  },
+  "cloud_run_deploy": {}
+}
